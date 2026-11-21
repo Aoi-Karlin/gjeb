@@ -1,0 +1,23 @@
+GJEB for Horizon
+================
+
+This Horizon mod is a port of idea, not of code: it reimplements the behaviour of
+
+  GJEB (GammaJustExtremeBright) — https://modrinth.com/mod/gjeb
+  Copyright (c) the GJEB contributors, Apache License 2.0
+  https://github.com/MC-U-Team/GJEB-GammaJustExtremeBright
+
+whose brightness slider reaches 1000% instead of vanilla's 100%, so a player can see in the dark
+without torches or night vision. No line of the Java mod was copied: Horizon runs Rust, and this
+mod is written against the Horizon mod API 0.2 and the native mixin route.
+
+Prior art on Horizon, read for its approach (also MIT, not copied):
+
+  MoreGamma / fullbright — https://github.com/bezi5kt/gamma-rust
+  Copyright (c) 2026 tilen, MIT License
+
+The approach both share: the game copies the brightness slider into the renderer's lightmap gamma;
+this mod overwrites that value once per frame while it is on, and leaves the player's own brightness
+slider and options.txt untouched, so switching it off restores the player's brightness immediately.
+
+The icon is original artwork drawn for this mod.

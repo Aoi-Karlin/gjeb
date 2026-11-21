@@ -1,0 +1,7 @@
+{
+  "gjeb.setting.enabled": "完全亮度",
+  "gjeb.setting.enabled.tooltip": "使用下面的亮度值，而不是视频设置里的亮度滑块。",
+  "gjeb.setting.brightness": "亮度",
+  "gjeb.setting.brightness.tooltip": "100% 是原版的「明亮」，最高 1000%，不用火把也能看清黑暗。",
+  "gjeb.key.toggle": "切换完全亮度"
+}

@@ -1,0 +1,7 @@
+{
+  "gjeb.setting.enabled": "Full brightness",
+  "gjeb.setting.enabled.tooltip": "Use the brightness below instead of the video settings slider.",
+  "gjeb.setting.brightness": "Brightness",
+  "gjeb.setting.brightness.tooltip": "100% is vanilla's Bright; up to 1000% sees in the dark without torches.",
+  "gjeb.key.toggle": "Toggle full brightness"
+}

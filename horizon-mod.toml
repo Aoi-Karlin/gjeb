@@ -1,0 +1,30 @@
+id = "gjeb"
+name = "GJEB (Gamma Just Extreme Bright)"
+version = "1.0.0"
+description = "Brightness past the video settings' 100%: a slider up to 1000%, a toggle and a key that turn full brightness on and off."
+authors = ["lead"]
+license = "MIT"
+homepage = "https://modrinth.com/mod/gjeb"
+api = "0.2"
+side = "client"
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "0a875da91dbb0fdcb7ba8c42c11341aa229af51a"
+mixins = "e59da9094f0c2fdda6c627fe9eff22dec6a906f0"
+
+# The two game internals the mixin writes through: the client's renderer and its lightmap gamma.
+[[internals]]
+path = "horizon_client::game::Game<'_>::renderer"
+
+[[internals]]
+path = "horizon_client_render::gfx::Renderer::gamma"
+
+# Each frame: the renderer's lightmap gamma is this mod's while it is on, the slider's otherwise.
+[[native.mixin]]
+id = "frame"
+target = "horizon_client::game::native_hooks::render_frame_pre::Game<'_>::native_render_frame_pre"
+kind = "HEAD"
+helper = "src/mixins/frame.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
